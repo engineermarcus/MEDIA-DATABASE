@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const images = require('./routes/imagesRoute');
 const videos = require('./routes/videosRoute');
-const port = 8080;
+const port = process.env.PORT || 8080;
 const path = require("path");
 app.use(express.json());
 app.use('/media',express.static(path.join(__dirname, "public")));
